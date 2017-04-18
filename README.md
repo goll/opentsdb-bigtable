@@ -2,21 +2,7 @@
 Docker image that builds OpenTSDB using Bigtable.
 
 Base image used is `ubuntu:16.04` with a custom built [asyncbigtable](https://github.com/OpenTSDB/asyncbigtable) jar.
-The jar was built with the following dependencies to update the [Bigtable HBase client](https://github.com/GoogleCloudPlatform/cloud-bigtable-client):
-
-```
-<dependency>
-  <groupId>com.google.cloud.bigtable</groupId>
-  <artifactId>bigtable-hbase-1.2</artifactId>
-  <version>0.9.4</version>
-</dependency>
-
-<dependency>
-  <groupId>io.netty</groupId>
-  <artifactId>netty-tcnative-boringssl-static</artifactId>
-  <version>1.1.33.Fork19</version>
-</dependency>
-```
+Built from the latest released version [0.3.0-SNAPSHOT](OpenTSDB/asyncbigtable@6126a8e409fab7da75a6314a2aab1e2c2b03d774).
 
 ## Configuration
 * Replace the placeholder [bigtable.json](files/bigtable.json) with a valid account JSON key file
