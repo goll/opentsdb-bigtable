@@ -10,13 +10,7 @@ RUN mkdir -p /opt/opentsdb
 
 WORKDIR /opt/opentsdb
 
-COPY files/*.jar files/include.mk /opt/opentsdb/
-
-RUN git clone --depth 1 https://github.com/OpenTSDB/opentsdb.git opentsdb-${TSDB_VERSION} \
- && mv *.jar opentsdb-${TSDB_VERSION}/third_party/asyncbigtable/ \
- && mv include.mk opentsdb-${TSDB_VERSION}/third_party/asyncbigtable/ \
- && sed -i '/ASYNCBIGTABLE_VERSION/a\
-          <systemPath>@ASYNCBIGTABLE_FILE_LOCATION@</systemPath>' opentsdb-${TSDB_VERSION}/pom.xml.in \
+RUN git clone --quiet --depth 1 https://github.com/goll/opentsdb.git opentsdb-${TSDB_VERSION} \
  && cd opentsdb-${TSDB_VERSION} \
  && bash build-bigtable.sh \
  && ln -s /opt/opentsdb/opentsdb-${TSDB_VERSION}/build/tsdb /usr/bin/tsdb \
