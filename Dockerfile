@@ -1,12 +1,12 @@
 FROM ubuntu:16.04
 
+ENV TSDB_VERSION=2.3.0 \
+    DEBIAN_FRONTEND=noninteractive
+
 RUN apt-get -qq update \
  && apt-get -qq --no-install-recommends install git autoconf automake gawk openjdk-8-jdk-headless curl make python gnuplot5-nox \
- && rm -rf /var/lib/apt/lists/*
-
-ENV TSDB_VERSION=2.3.0
-
-RUN mkdir -p /opt/opentsdb
+ && rm -rf /var/lib/apt/lists/* \
+ && mkdir -p /opt/opentsdb
 
 WORKDIR /opt/opentsdb
 
