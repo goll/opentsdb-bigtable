@@ -1,16 +1,9 @@
 # opentsdb-bigtable
 Docker image that builds OpenTSDB using Bigtable with latest asyncbigtable.
 
-* Base image used is `ubuntu:16.04`
-* Using latest asyncbigtable built from official [repository](https://github.com/OpenTSDB/asyncbigtable) with:
-```
-<dependency>
-  <groupId>com.google.cloud.bigtable</groupId>
-  <artifactId>bigtable-hbase-2.x</artifactId>
-  <version>1.3.0</version>
-</dependency>
-```
-* OpenTSDB 2.4.0RC2 built from official [repository](https://github.com/OpenTSDB/opentsdb/releases/tag/v2.4.0RC2)
+* Base image used is `debian:stretch-slim`
+* Using latest asyncbigtable from official [repository](https://oss.sonatype.org/content/repositories/snapshots/com/pythian/opentsdb/asyncbigtable/0.4.1-SNAPSHOT/)
+* OpenTSDB 2.4.0 built from official [repository](https://github.com/OpenTSDB/opentsdb/releases/tag/v2.4.0)
 
 ## Configuration
 * Replace the placeholder [bigtable.json](files/bigtable.json) with a valid service account JSON key file
@@ -27,6 +20,6 @@ $ gcloud projects add-iam-policy-binding ${PROJECT_ID} --member="serviceAccount:
 
 ## Build the image
 ```
-$ docker pull ubuntu:16.04
+$ docker pull debian:stretch-slim
 $ docker build -t opentsdb-bigtable:foobar .
 ```
