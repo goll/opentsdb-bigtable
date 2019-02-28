@@ -13,11 +13,8 @@
 # You should have received a copy of the GNU Lesser General Public License
 # along with this library.  If not, see <http://www.gnu.org/licenses/>.
 
-ASYNCBIGTABLE_VERSION := 0.4.1-20190108.232311-2
+ASYNCBIGTABLE_VERSION := 0.4.2
 ASYNCBIGTABLE := third_party/asyncbigtable/asyncbigtable-$(ASYNCBIGTABLE_VERSION)-jar-with-dependencies.jar
-ASYNCBIGTABLE_BASE_URL := https://oss.sonatype.org/content/repositories/snapshots/com/pythian/opentsdb/asyncbigtable/0.4.1-SNAPSHOT/
-
-$(ASYNCBIGTABLE): $(ASYNCBIGTABLE).md5
-	set dummy "$(ASYNCBIGTABLE_BASE_URL)" "$(ASYNCBIGTABLE)"; shift; $(FETCH_DEPENDENCY)
+ASYNCBIGTABLE_FILE_LOCATION := third_party/asyncbigtable/asyncbigtable-$(ASYNCBIGTABLE_VERSION)-jar-with-dependencies.jar
 
 THIRD_PARTY += $(ASYNCBIGTABLE)
