@@ -2,7 +2,7 @@
 Docker image that builds OpenTSDB using Bigtable with latest asyncbigtable.
 
 * Base image used is `debian:stretch-slim`
-* Using latest asyncbigtable from official [repository](https://oss.sonatype.org/content/repositories/snapshots/com/pythian/opentsdb/asyncbigtable/0.4.1-SNAPSHOT/)
+* Using latest asyncbigtable 0.4.2 built from official [repository](https://github.com/OpenTSDB/asyncbigtable/releases/tag/asyncbigtable-0.4.2)
 * OpenTSDB 2.4.0 built from official [repository](https://github.com/OpenTSDB/opentsdb/releases/tag/v2.4.0)
 
 ## Configuration
